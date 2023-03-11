@@ -9,15 +9,15 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.Data.PriceModel
+import com.example.rig.Model.User
 import com.example.rig.databinding.FragmentAdminHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AdminHomeFragment : Fragment() {
 
-//    companion object {
-//        fun newInstance() = AdminHomeFragment()
-//    }
+
     lateinit var binding: FragmentAdminHomeBinding
 //    private val progressBar: ProgressBar? = null
     override fun onCreateView(
@@ -32,32 +32,26 @@ class AdminHomeFragment : Fragment() {
     private fun SaveDataBtn(){
         binding.saveBtn.setOnClickListener {
             val metal =  binding.metalPrice.text.toString()
-            val glass = binding.glassPrice.text.toString()
+            val plastic = binding.plasticPrice.text.toString()
             val paper = binding.paperPrice.text.toString()
             val organic = binding.organicPrice.text.toString()
             val oil = binding.oilPrice.text.toString()
 //            progressBar!!.visibility = View.VISIBLE
-            saveFireStore(metal,glass,paper,organic,oil)
+            saveFireStore(metal,plastic,paper,organic,oil)
 
         }
 
     }
-    fun saveFireStore(metal:String, glass:String, paper:String,organic:String,oil:String) {
-val model  = PriceModel(metal,glass,paper,organic,oil)
-        val db = FirebaseFirestore.getInstance()
+    fun saveFireStore(metal:String, plastic:String, paper:String,organic:String,oil:String) {
 
 
-        db.collection("Admin/")
-            .document()
-            .set(model)
-            .addOnSuccessListener {
-                Toast.makeText(requireContext(), "record added successfully ", Toast.LENGTH_SHORT ).show()
-            }
-            .addOnFailureListener{
-                it.message?.let { it1 -> Log.d("error", it1) }
-                Toast.makeText(requireContext(), "record Failed to add ", Toast.LENGTH_SHORT ).show()
+        val model  = PriceModel(metal,plastic,paper,organic,oil)
 
-            }
+        FirebaseDatabase.getInstance().getReference("PriceData")
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
+            .setValue(model)
+
+
 
     }
 }

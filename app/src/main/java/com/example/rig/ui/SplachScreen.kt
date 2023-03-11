@@ -61,6 +61,7 @@ class SplachScreen : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)
                     navigat(user!!.state)
+                    Log.d("state_fromserver",user.state)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -69,10 +70,12 @@ class SplachScreen : Fragment() {
             })
     }
     private fun navigat(userType: String) {
+        Log.d("state",userType)
+
         if (userType == "Admin") {
-            findNavController().navigate(R.id.admin_home)
+            findNavController().navigate(R.id.mainAdminFragment)
         } else if (userType == "User") {
-            findNavController().navigate(R.id.user_home)
+            findNavController().navigate(R.id.mainUserFragment)
         } else {
             Toast.makeText(requireContext(), "Error out users",Toast.LENGTH_SHORT).show()
         }
