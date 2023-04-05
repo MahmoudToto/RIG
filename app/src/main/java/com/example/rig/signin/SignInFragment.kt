@@ -1,5 +1,6 @@
-package com.example.rig.SignIn
+package com.example.rig.signin
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,15 +9,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.rig.Model.User
 import com.example.rig.R
 import com.example.rig.databinding.FragmentSignInBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.example.rig.Model.User
 
 
 class SignInFragment : Fragment() {
@@ -38,13 +38,14 @@ class SignInFragment : Fragment() {
 
         binding.loginBtnButton.setOnClickListener {
             binding.apply {
-                email = loginTvEmail.text.toString()
-                pass = loginTvPassword.text.toString()
-                Log.d("pass",pass.toString())
-                Log.d("email",email.toString())
+                email = loginTvEmail.text.toString().trim()
+                pass = loginTvPassword.text.toString().trim()
+                Log.d("pass", pass.toString())
+                Log.d("email", email.toString())
                 signin(email, pass)
             }
         }
+        getUserData()
         return binding.root
     }
 
@@ -62,14 +63,19 @@ class SignInFragment : Fragment() {
 
 
     }
+
+    @SuppressLint("LongLogTag")
     private fun signin(email: String, pass: String) {
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass)
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email.trim(), pass)
             .addOnCompleteListener { task: Task<AuthResult?> ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "Successfully", Toast.LENGTH_SHORT).show()
 //                    Navigation.findNavController(binding.root)
 //                        .navigate(R.id.action_signInFragment_to_mainUserFragment)
-                    getUserData(email)
+//                    getUserData(email)
+//                   var state  =  searchByEmail(email.trim())
+//                    Log.d("stateUser_succeessfuly_signing",state)
+//                    navigat(state)
 
                 } else {
                     Toast.makeText(requireContext(), "Faild", Toast.LENGTH_SHORT).show()
@@ -78,37 +84,59 @@ class SignInFragment : Fragment() {
             }
     }
 
-    private fun getUserData(email: String) {
+    private fun getUserData() {
 
-        var databaseReference = FirebaseDatabase.getInstance().reference.child("Users")
-            val query:Query =databaseReference
-                .orderByChild("email").equalTo(email)
-        query.addListenerForSingleValueEvent(object : ValueEventListener {
+        var ref = FirebaseDatabase.getInstance().getReference("Users")
+        val menuListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val user = dataSnapshot.getValue(User::class.java)
+                Log.d("usss",user.toString())
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+                // handle error
+            }
+        }
+        ref.addListenerForSingleValueEvent(menuListener)
+    }
+
+    private fun navigat(userType: String) {
+        Log.d("state", userType)
+
+        if (userType == "Admin") {
+            findNavController().navigate(R.id.action_signInFragment_to_mainAdminFragment)
+        } else if (userType == "User") {
+            findNavController().navigate(R.id.action_signInFragment_to_mainUserFragment)
+        } else if (userType == "Seller") {
+            findNavController().navigate(R.id.action_signInFragment_to_mainSellerFragment)
+        } else {
+            Toast.makeText(requireContext(), "Error out users", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun searchByEmail(email: String): String {
+        var stateUser = ""
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+
+        databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    Log.d("emaailtest","Email here")
-                }else {
-                    Log.d("emaailtest","Email not here")
-
+                val user = snapshot.getValue(User::class.java)
+                Log.d("userdata",user.toString())
+                if (user!!.email.equals(email)) {
+                    stateUser = user.state
+                    Log.d("stateUser_successfuly",stateUser)
+                } else {
+                    Toast.makeText(requireContext(), "User Not Here", Toast.LENGTH_SHORT).show()
                 }
+
+
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(requireContext(), error.code, Toast.LENGTH_SHORT).show()
             }
-
         })
-    }
-    private fun navigat(userType: String) {
-        Log.d("state",userType)
-
-        if (userType == "Admin") {
-            findNavController().navigate(R.id.mainAdminFragment)
-        } else if (userType == "User") {
-            findNavController().navigate(R.id.mainUserFragment)
-        } else {
-            Toast.makeText(requireContext(), "Error out users",Toast.LENGTH_SHORT).show()
-        }
+        Log.d("stateUser_return",stateUser)
+        return stateUser
     }
 }
 

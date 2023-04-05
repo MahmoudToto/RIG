@@ -22,7 +22,6 @@ class MainAdminFragment : Fragment() {
     ): View? {
         binding = FragmentAdminMainBinding.inflate(inflater, container, false)
         fragmentManager?.beginTransaction()?.replace(R.id.frameLayoutAdmin, AdminHomeFragment())?.commit()
-
         bottomNavigation()
         return binding.root
     }

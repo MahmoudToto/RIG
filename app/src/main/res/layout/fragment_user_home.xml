@@ -19,8 +19,8 @@
 
         <ImageView
             android:id="@+id/save_btn"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/bell"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,327 +41,748 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/metal"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="@color/main_color"
-            app:cardCornerRadius="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.174">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/metal"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025">
 
-            <ImageView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:src="@drawable/metals" />
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/metals" />
 
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:src="@drawable/percent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
 
+                    <ProgressBar
+                        android:id="@+id/progressBar_metal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
 
-            <TextView
-                android:id="@+id/metal_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_margin="@dimen/_6sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center|top"
-                android:padding="@dimen/_2sdp"
-                android:text="Metal"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
+                    <TextView
+                        android:id="@+id/progressBar_tv_metal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
+                    <TextView
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="LE/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/organic"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="@color/main_color"
-            app:cardCornerRadius="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/metal"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/metal"
-            app:layout_constraintTop_toBottomOf="@+id/metal"
-            app:layout_constraintVertical_bias="0.0">
-
-            <ImageView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:src="@drawable/organic" />
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:src="@drawable/percent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_margin="@dimen/_6sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="@dimen/_2sdp"
-                android:text="Organic"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="LE/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/paper"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="@color/main_color"
-            app:cardCornerRadius="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/organic"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/organic"
-            app:layout_constraintTop_toBottomOf="@+id/organic"
-            app:layout_constraintVertical_bias="0.0">
-
-            <ImageView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:src="@drawable/paper" />
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:src="@drawable/percent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_margin="@dimen/_6sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="@dimen/_2sdp"
-                android:text="Paper"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="LE/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/plastic"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="@color/main_color"
-            app:cardCornerRadius="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/paper"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/paper"
-            app:layout_constraintTop_toBottomOf="@+id/paper"
-            app:layout_constraintVertical_bias="0.0">
-
-            <ImageView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:src="@drawable/glasses" />
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:src="@drawable/percent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_margin="@dimen/_6sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="@dimen/_2sdp"
-                android:text="Plastic"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="LE/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
-        </androidx.cardview.widget.CardView>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_metal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_metal"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_metal"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/oil"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:backgroundTint="@color/main_color"
-            app:cardCornerRadius="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/plastic"
-            app:layout_constraintHorizontal_bias="1.0"
 
-            app:layout_constraintStart_toStartOf="@+id/plastic"
-            app:layout_constraintTop_toBottomOf="@+id/plastic"
-            app:layout_constraintVertical_bias="0.0">
+                <TextView
+                    android:id="@+id/metal_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center|top"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Metal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
 
-            <ImageView
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:src="@drawable/oil" />
+                <TextView
+                    android:id="@+id/metal_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
 
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:src="@drawable/percent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_margin="@dimen/_6sdp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="@dimen/_2sdp"
-                android:text="Oil"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
+            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/organic"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/metal"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/metal"
+                app:layout_constraintTop_toBottomOf="@+id/metal"
+                app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center|bottom"
-                android:text="LE/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
-        </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/organic" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_organic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_organic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_organic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_organic"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_organic"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Organic"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/organic_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paper"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/organic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/organic"
+                app:layout_constraintTop_toBottomOf="@+id/organic"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/paper" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_paper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_paper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_paper"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_paper"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_paper"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Paper"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/paper_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/plastic"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/paper"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/paper"
+                app:layout_constraintTop_toBottomOf="@+id/paper"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/plastic" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_plastic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_plastic"
+                        android:layout_width="16dp"
+                        android:layout_height="18dp"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_plastic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_plastic"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_plastic"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Plastic"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/plastic_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/glass"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/paper"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/paper"
+                app:layout_constraintTop_toBottomOf="@+id/plastic"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/glasses" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_glass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_glass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_glass"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_glass"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_glass"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Glass"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/glass_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/oil"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/plastic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/plastic"
+                app:layout_constraintTop_toBottomOf="@+id/glass"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/oil" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_oil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_oil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_oil"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_oil"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_oil"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Oil"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/oil_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/other"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/oil"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/oil"
+                app:layout_constraintTop_toBottomOf="@+id/oil"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/lost" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="end|center">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar_lost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/progress"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/progressBar_tv_lost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_lost"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_lost"
+                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_lost"
+                        app:layout_constraintVertical_bias="0.516" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Lost"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/lost_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

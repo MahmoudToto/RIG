@@ -48,6 +48,7 @@
 
             <TextView
                 android:id="@+id/saftey"
+                android:background="#BFBFBF"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/saftey"
@@ -85,6 +86,7 @@
 
             <TextView
                 android:id="@+id/about_us"
+                android:background="#BFBFBF"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/about"
@@ -122,6 +124,7 @@
 
             <TextView
                 android:id="@+id/help"
+                android:background="#BFBFBF"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/baseline_help_outline_24"
@@ -159,6 +162,7 @@
 
             <TextView
                 android:id="@+id/logout"
+                android:background="#BFBFBF"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/ic_baseline_logout_24"

@@ -1,4 +1,4 @@
-package com.example.rig.SignUp
+package com.example.rig.signup
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

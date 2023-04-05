@@ -41,14 +41,12 @@ class SplachScreen : Fragment() {
 
         lifecycleScope.launchWhenStarted {
             delay(3000)
-            withContext(Dispatchers.Main){
-                findNavController().navigate(R.id.splachScreen)
+            Log.d("userstatenull","yes")
+            if (user == null) {
+                findNavController().navigate(R.id.action_splachScreen_to_signInFragment)
+            } else {
+                getUserData()
             }
-        }
-        if (user == null) {
-            findNavController().navigate(R.id.signInFragment)
-        } else {
-            getUserData()
         }
 
         return binding.root
@@ -61,7 +59,7 @@ class SplachScreen : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)
                     navigat(user!!.state)
-                    Log.d("state_fromserver",user.state)
+                    Log.d("state_fromserver", user.state)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -69,15 +67,19 @@ class SplachScreen : Fragment() {
                 }
             })
     }
+
     private fun navigat(userType: String) {
-        Log.d("state",userType)
+        Log.d("state", userType)
 
         if (userType == "Admin") {
-            findNavController().navigate(R.id.mainAdminFragment)
+            findNavController().navigate(R.id.action_splachScreen_to_mainAdminFragment)
         } else if (userType == "User") {
-            findNavController().navigate(R.id.mainUserFragment)
-        } else {
-            Toast.makeText(requireContext(), "Error out users",Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_splachScreen_to_mainUserFragment)
+        }else if(userType == "Seller"){
+            findNavController().navigate(R.id.action_splachScreen_to_mainSellerFragment)
+        }
+        else {
+            Toast.makeText(requireContext(), "Error out users", Toast.LENGTH_SHORT).show()
         }
     }
 }

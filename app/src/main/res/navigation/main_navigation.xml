@@ -26,11 +26,16 @@
         tools:layout="@layout/fragment_admin_setting" >
         <action
             android:id="@+id/action_adminSettingFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/adminSettingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_adminSettingFragment_to_safetyFragment"
+            app:destination="@id/safetyFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.rig.SignIn.SignInFragment"
+        android:name="com.example.rig.signin.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -38,25 +43,43 @@
             app:destination="@id/signUpFragment" />
         <action
             android:id="@+id/action_signInFragment_to_mainAdminFragment"
-            app:destination="@id/mainAdminFragment" />
+            app:destination="@id/mainAdminFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_signInFragment_to_mainUserFragment"
-            app:destination="@id/mainUserFragment" />
+            app:destination="@id/mainUserFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainSellerFragment"
+            app:destination="@id/mainSellerFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.rig.SignUp.SignUpFragment"
+        android:name="com.example.rig.signup.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_mainAdminFragment"
-            app:destination="@id/mainAdminFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_mainUserFragment"
-            app:destination="@id/mainUserFragment" />
+            app:destination="@id/mainAdminFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainUserFragment"
+            app:destination="@id/mainUserFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainSellerFragment"
+            app:destination="@id/mainSellerFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -66,10 +89,24 @@
         tools:layout="@layout/fragment_splach_screen" >
         <action
             android:id="@+id/action_splachScreen_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/splachScreen"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splachScreen_to_mainAdminFragment"
-            app:destination="@id/mainAdminFragment" />
+            app:destination="@id/mainAdminFragment"
+            app:popUpTo="@id/splachScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splachScreen_to_mainUserFragment"
+            app:destination="@id/mainUserFragment"
+            app:popUpTo="@id/splachScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splachScreen_to_mainSellerFragment"
+            app:destination="@id/mainSellerFragment"
+            app:popUpTo="@id/splachScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/userHomeFragment"
@@ -82,17 +119,56 @@
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
     <fragment
-        android:id="@+id/mainUserFragment"
-        android:name="com.example.User.MainUserFragment"
-        android:label="fragment_user_main"
-        tools:layout="@layout/fragment_user_main" />
-    <fragment
         android:id="@+id/userSettingFragment"
         android:name="com.example.User.UserSetting.UserSettingFragment"
         android:label="fragment_user_setting"
         tools:layout="@layout/fragment_user_setting" >
         <action
             android:id="@+id/action_userSettingFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/userSettingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userSettingFragment_to_safetyFragment"
+            app:destination="@id/safetyFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainUserFragment"
+        android:name="com.example.User.MainUserFragment"
+        android:label="fragment_main_user"
+        tools:layout="@layout/fragment_main_user" />
+    <fragment
+        android:id="@+id/mainSellerFragment"
+        android:name="com.example.seller.MainSellerFragment"
+        android:label="fragment_main_seller"
+        tools:layout="@layout/fragment_main_seller" />
+    <fragment
+        android:id="@+id/sellerHomeFragment"
+        android:name="com.example.seller.SellerHome.SellerHomeFragment"
+        android:label="fragment_home_setting"
+        tools:layout="@layout/fragment_seller_home" />
+    <fragment
+        android:id="@+id/sellerProfileFragment"
+        android:name="com.example.seller.SellerProile.SellerProfileFragment"
+        android:label="fragment_seller_profile"
+        tools:layout="@layout/fragment_seller_profile" />
+    <fragment
+        android:id="@+id/sellerSettingFragment"
+        android:name="com.example.seller.SellerSetting.SellerSettingFragment"
+        android:label="fragment_seller_setting"
+        tools:layout="@layout/fragment_seller_setting" >
+        <action
+            android:id="@+id/action_sellerSettingFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/sellerSettingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sellerSettingFragment_to_safetyFragment"
+            app:destination="@id/safetyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/safetyFragment"
+        android:name="com.example.rig.ui.SafetyFragment"
+        android:label="fragment_safety"
+        tools:layout="@layout/fragment_safety" />
 </navigation>

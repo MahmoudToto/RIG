@@ -24,11 +24,14 @@ class UserSettingFragment : Fragment() {
         aboutUs()
         help()
         logOut()
-
+        saftey()
         return binding.root
     }
 
     fun saftey(){
+        binding.cardViewSaftey.setOnClickListener {
+            findNavController().popBackStack(R.id.action_userSettingFragment_to_signInFragment,false)
+        }
 
     }
     fun aboutUs(){
