@@ -18,9 +18,11 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp" />
 
-    <ImageView
+    <at.markushi.ui.CircleButton
+        android:id="@+id/btn_back"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
+        app:cb_color="@color/white"
         android:layout_gravity="start"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_25sdp"
@@ -213,7 +215,8 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:minHeight="48dp"
-            android:text="Ahmed"
+            android:text="1/9/1997"
+            android:inputType="date"
             android:textColor="@color/main_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/birth_day"

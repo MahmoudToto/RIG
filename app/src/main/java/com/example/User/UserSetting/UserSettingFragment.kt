@@ -20,7 +20,7 @@ class UserSettingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUserSettingBinding.inflate(inflater, container, false)
-
+        back()
         aboutUs()
         help()
         logOut()
@@ -28,9 +28,14 @@ class UserSettingFragment : Fragment() {
         return binding.root
     }
 
+    fun back(){
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.mainUserFragment)
+        }
+    }
     fun saftey(){
         binding.cardViewSaftey.setOnClickListener {
-            findNavController().popBackStack(R.id.action_userSettingFragment_to_signInFragment,false)
+            findNavController().popBackStack(R.id.action_userSettingFragment_to_safetyFragment,false)
         }
 
     }
@@ -41,7 +46,7 @@ class UserSettingFragment : Fragment() {
     }
     fun help(){
         binding.cardViewHelp.setOnClickListener {
-            Toast.makeText(requireContext(),"Soon",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Soon by RIG Team",Toast.LENGTH_SHORT).show()
         }
     }
     fun logOut() {

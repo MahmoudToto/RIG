@@ -10,11 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.rig.Model.PriceModel
 import com.example.rig.Model.User
 import com.example.rig.R
 import com.example.rig.databinding.FragmentSignUpBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 

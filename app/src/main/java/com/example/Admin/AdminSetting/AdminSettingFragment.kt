@@ -28,7 +28,7 @@ private lateinit var binding:FragmentAdminSettingBinding
         aboutUs()
         help()
         logOut()
-
+        back()
         return binding.root
     }
 
@@ -54,6 +54,11 @@ private lateinit var binding:FragmentAdminSettingBinding
         binding.cardViewLogOut.setOnClickListener {
             logout.signOut()
             findNavController().navigate(R.id.action_adminSettingFragment_to_signInFragment)
+        }
+    }
+    fun back(){
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.mainUserFragment)
         }
     }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_home"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context="com.example.User.UserHome.UserHomeFragment">
 
@@ -95,6 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,12 +125,12 @@
 
                 <TextView
                     android:id="@+id/metal_tv"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
-                    android:gravity="center|top"
+                    android:gravity="center"
                     android:padding="@dimen/_2sdp"
                     android:text="Metal"
                     android:textColor="@color/black"
@@ -138,7 +140,9 @@
                     android:id="@+id/metal_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -147,14 +151,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/metal_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:maxLength="4"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -202,6 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -229,21 +260,22 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
                     android:text="Organic"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20ssp" />
-
                 <TextView
                     android:id="@+id/organic_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -252,11 +284,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/organic_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:maxLength="4"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
 
@@ -307,6 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -334,8 +394,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
@@ -347,7 +407,9 @@
                     android:id="@+id/paper_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -356,11 +418,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/paper_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
 
@@ -408,9 +497,10 @@
 
                     <TextView
                         android:id="@+id/progressBar_tv_plastic"
-                        android:layout_width="16dp"
-                        android:layout_height="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="20"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -438,8 +528,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
@@ -451,7 +541,9 @@
                     android:id="@+id/plastic_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -460,11 +552,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/plastic_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
 
@@ -516,6 +635,7 @@
                         android:layout_height="wrap_content"
                         android:text="20"
                         android:textColor="@color/black"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -542,8 +662,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
@@ -555,7 +675,9 @@
                     android:id="@+id/glass_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -564,11 +686,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/glass_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:maxLength="4"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
 
@@ -621,6 +770,7 @@
                         android:text="20"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -645,8 +795,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
@@ -658,7 +808,9 @@
                     android:id="@+id/oil_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
+                    android:text="25"
+                    android:layout_marginEnd="@dimen/_110sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:textColor="@color/black"
@@ -667,11 +819,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="end|bottom"
                     android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="center|bottom"
                     android:text="LE/Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+                <TextView
+                    android:id="@+id/oil_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:text="0.00"
+                    android:maxLength="4"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_130sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
 
@@ -696,7 +875,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="start|center"
                     android:layout_marginStart="@dimen/_25sdp"
-                    android:src="@drawable/lost" />
+                    android:src="@drawable/missing" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="@dimen/_60sdp"
@@ -721,6 +900,7 @@
                         android:id="@+id/progressBar_tv_lost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:text="20"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp"
@@ -748,35 +928,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center|top"
-                    android:layout_margin="@dimen/_2sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"
-                    android:text="Lost"
+                    android:text="Missing"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20ssp" />
 
-                <TextView
-                    android:id="@+id/lost_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:gravity="center|bottom"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_15ssp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
-                    android:layout_marginStart="@dimen/_25sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:gravity="center|bottom"
-                    android:text="LE/Kg"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_10ssp" />
 
             </androidx.cardview.widget.CardView>
 
