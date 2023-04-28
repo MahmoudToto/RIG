@@ -877,59 +877,12 @@
                     android:layout_marginStart="@dimen/_25sdp"
                     android:src="@drawable/missing" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    android:layout_gravity="end|center">
-
-                    <ProgressBar
-                        android:id="@+id/progressBar_lost"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:indeterminateOnly="false"
-                        android:progress="20"
-                        android:progressDrawable="@drawable/progress"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.5" />
-
-                    <TextView
-                        android:id="@+id/progressBar_tv_lost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:text="20"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_10ssp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.5" />
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="%"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_10ssp"
-                        app:layout_constraintBottom_toBottomOf="@+id/progressBar_tv_lost"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/progressBar_tv_lost"
-                        app:layout_constraintTop_toTopOf="@+id/progressBar_tv_lost"
-                        app:layout_constraintVertical_bias="0.516" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_gravity="center|top"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="@dimen/_2sdp"

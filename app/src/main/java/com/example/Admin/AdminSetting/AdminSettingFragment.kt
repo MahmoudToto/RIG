@@ -24,7 +24,6 @@ private lateinit var binding:FragmentAdminSettingBinding
 
         binding = FragmentAdminSettingBinding.inflate(inflater, container, false)
 
-        saftey()
         aboutUs()
         help()
         logOut()
@@ -32,13 +31,6 @@ private lateinit var binding:FragmentAdminSettingBinding
         return binding.root
     }
 
-    fun saftey(){
-        binding.cardViewSaftey.setOnClickListener {
-            Log.d("exc", "Phone error message : ")
-            findNavController().navigate(R.id.action_adminSettingFragment_to_safetyFragment)
-        }
-
-    }
     fun aboutUs(){
         binding.cardViewAbout.setOnClickListener {
             Toast.makeText(requireContext(),"Soon by RIG Team", Toast.LENGTH_SHORT).show()

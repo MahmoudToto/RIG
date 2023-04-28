@@ -91,6 +91,31 @@
                     android:layout_marginStart="@dimen/_25sdp"
                     android:src="@drawable/metals" />
 
+                <TextView
+                    android:id="@+id/metal_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="@dimen/_60sdp"
@@ -158,7 +183,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/metal_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
@@ -193,10 +218,10 @@
                 app:cardCornerRadius="@dimen/_20sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/metal"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/metal"
                 app:layout_constraintTop_toBottomOf="@+id/metal"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintVertical_bias="0.002">
 
                 <ImageView
                     android:layout_width="@dimen/_60sdp"
@@ -270,12 +295,10 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/organic_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginStart="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_6sdp"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
@@ -294,8 +317,33 @@
                         android:inputType="numberDecimal"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp" />
-                </com.google.android.material.textfield.TextInputLayout>
 
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/organic_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -383,12 +431,10 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/paper_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginStart="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_6sdp"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
@@ -408,7 +454,31 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/paper_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -497,12 +567,10 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/plastic_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginStart="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_6sdp"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
@@ -522,7 +590,31 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/plastic_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -611,12 +703,10 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/glass_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginStart="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_6sdp"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
@@ -636,6 +726,31 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/glass_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -725,12 +840,10 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/oil_layout"
                     style="@style/LoginTextInputOuterFieldStyle"
-                    android:layout_width="146dp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginStart="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
@@ -750,9 +863,70 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10ssp" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/oil_wait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:text="0.00"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:maxLength="4"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center|bottom"
+                    android:text="Kg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/other"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/main_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/oil"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/oil"
+                app:layout_constraintTop_toBottomOf="@+id/oil"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:src="@drawable/missing" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Missing"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+
 
             </androidx.cardview.widget.CardView>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

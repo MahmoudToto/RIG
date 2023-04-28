@@ -65,8 +65,8 @@ class UserHomeFragment : Fragment() {
 
     //    TODO: ProgressBar Handling
     fun updateProgressBar() {
-        binding.progressBarTvLost.text = lost
-        binding.progressBarLost.setProgress(lost.toInt(), true)
+//        binding.progressBarTvLost.text = lost
+//        binding.progressBarLost.setProgress(lost.toInt(), true)
 
         binding.progressBarTvPlastic.text = plastic
         binding.progressBarPlastic.setProgress(plastic.toInt(), true)
@@ -95,7 +95,7 @@ class UserHomeFragment : Fragment() {
     var organic = ""
     var oil = ""
 
-    //    TODO: get data from real time
+//     TODO: get data from real time
     suspend private fun getpercentage() {
         Log.d("GGG","fsafsa")
         FirebaseDatabase.getInstance().getReference("PriceData")

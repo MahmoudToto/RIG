@@ -5,6 +5,10 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
+
+    <item android:id="@+id/saftey"
+        android:icon="@drawable/saftey"
+        android:title="Saftey"/>
     <item
         android:id="@+id/setting"
         android:icon="@drawable/ic_baseline_settings_24"

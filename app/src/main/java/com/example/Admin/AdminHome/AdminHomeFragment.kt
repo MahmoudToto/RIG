@@ -26,6 +26,7 @@ class AdminHomeFragment : Fragment() {
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
     lateinit var binding: FragmentAdminHomeBinding
     lateinit var userData: PriceModel
+    lateinit var plast:String
 
     //    private val progressBar: ProgressBar? = null
     override fun onCreateView(
@@ -35,15 +36,24 @@ class AdminHomeFragment : Fragment() {
         binding = FragmentAdminHomeBinding.inflate(inflater, container, false)
         viewLifecycleOwner.lifecycleScope.launch {
             launch { SaveDataBtn() }
-            launch { getpercentage()}
+            launch { getpercentage() }
             launch { getWeight() }
+        }
+        if (savedInstanceState != null) {
+           plast = savedInstanceState.getString("testt").toString()
+//            binding.plasticPrice.setText(String.)
         }
         return binding.root
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        plast = binding.plasticPrice.text.toString()
+        outState.putString("testt", plast)
+    }
+
     suspend private fun SaveDataBtn() {
         binding.saveBtn.setOnClickListener {
-//            val lost = binding.lostPrice.text.toString()
             val plastic = binding.plasticPrice.text.toString()
             val glass = binding.glassPrice.text.toString()
             val metal = binding.metalPrice.text.toString()
@@ -54,8 +64,8 @@ class AdminHomeFragment : Fragment() {
 //            saveFireStore(metal,organic,paper,plastic,glass,oil)
             userData = PriceModel(
 //                lost ,
-                plastic ,
-                glass ,
+                plastic,
+                glass,
                 metal,
                 paper,
                 organic,
@@ -69,7 +79,7 @@ class AdminHomeFragment : Fragment() {
     }
 
     //    TODO: push data to fire store
-    private fun setFireStore(userData:PriceModel) {
+    private fun setFireStore(userData: PriceModel) {
         db.collection("PriceData")
             .document(FirebaseAuth.getInstance().currentUser!!.uid)
             .set(userData)
@@ -88,7 +98,8 @@ class AdminHomeFragment : Fragment() {
         paper: String,
         plastic: String,
         glass: String,
-        oil: String) {
+        oil: String
+    ) {
         val model = PriceModel(metal, organic, paper, plastic, glass, oil)
         FirebaseDatabase.getInstance().getReference("PriceData")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
@@ -99,8 +110,6 @@ class AdminHomeFragment : Fragment() {
 
     //    TODO: ProgressBar Handling
     fun updateProgressBar() {
-//        binding.progressBarTvLost.text = lost
-//        binding.progressBarLost.setProgress(lost.toInt(), true)
 
         binding.progressBarTvPlastic.text = plastic
         binding.progressBarPlastic.setProgress(plastic.toInt(), true)
@@ -153,18 +162,19 @@ class AdminHomeFragment : Fragment() {
             })
 
     }
+
     suspend private fun getWeight() {
         FirebaseDatabase.getInstance().getReference("weight")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val weightmodel = snapshot.getValue(WeightModel::class.java)
 
-//                    binding.plasticWait.text = weightmodel!!.weight1!!.let { abs(it) }.toString()
-//                    binding.glassWait.text = weightmodel!!.weight2!!.let { abs(it) }.toString()
-//                    binding.metalWait.text = weightmodel!!.weight3!!.let { abs(it) }.toString()
-//                    binding.paperWait.text = weightmodel!!.weight4!!.let { abs(it) }.toString()
-//                    binding.organicWait.text = weightmodel!!.weight5!!.let { abs(it) }.toString()
-//                    binding.oilWait.text = weightmodel!!.weight6!!.let { abs(it) }.toString()
+                    binding.plasticWait.text = weightmodel!!.weight1!!.let { abs(it) }.toString()
+                    binding.glassWait.text = weightmodel!!.weight2!!.let { abs(it) }.toString()
+                    binding.metalWait.text = weightmodel!!.weight3!!.let { abs(it) }.toString()
+                    binding.paperWait.text = weightmodel!!.weight4!!.let { abs(it) }.toString()
+                    binding.organicWait.text = weightmodel!!.weight5!!.let { abs(it) }.toString()
+                    binding.oilWait.text = weightmodel!!.weight6!!.let { abs(it) }.toString()
 
                     Log.d(ContentValues.TAG, "hsf" + snapshot.toString())
                 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.Admin.AdminHome.AdminHomeFragment
 import com.example.Admin.AdminProile.AdminProfileFragment
+import com.example.Admin.AdminSaftey.AdminSafteyFragment
 import com.example.Admin.AdminSetting.AdminSettingFragment
 
 import com.example.rig.R
@@ -35,6 +36,8 @@ class MainAdminFragment : Fragment() {
                 R.id.home -> fragment = AdminHomeFragment()
                 R.id.setting -> fragment = AdminSettingFragment()
                 R.id.profile -> fragment = AdminProfileFragment()
+                R.id.saftey -> fragment = AdminSafteyFragment()
+
             }
             fragmentManager?.beginTransaction()?.replace(R.id.frameLayoutAdmin, fragment)?.commit()
             return@setOnItemSelectedListener true

@@ -24,7 +24,6 @@ class UserSettingFragment : Fragment() {
         aboutUs()
         help()
         logOut()
-        saftey()
         return binding.root
     }
 
@@ -33,12 +32,8 @@ class UserSettingFragment : Fragment() {
             findNavController().navigate(R.id.mainUserFragment)
         }
     }
-    fun saftey(){
-        binding.cardViewSaftey.setOnClickListener {
-            findNavController().popBackStack(R.id.action_userSettingFragment_to_safetyFragment,false)
-        }
 
-    }
+
     fun aboutUs(){
         binding.cardViewAbout.setOnClickListener {
             Toast.makeText(requireContext(),"Soon by RIG Team",Toast.LENGTH_SHORT).show()
