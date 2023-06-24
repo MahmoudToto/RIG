@@ -38,11 +38,25 @@ class SignInFragment : Fragment() {
 
         binding.loginBtnButton.setOnClickListener {
             binding.apply {
-                email = loginTvEmail.text.toString().trim()
-                pass = loginTvPassword.text.toString().trim()
-                Log.d("pass", pass.toString())
-                Log.d("email", email.toString())
-                signin(email, pass)
+                val email = loginTvEmail.text.toString()
+                val pass = loginTvPassword.text.toString()
+
+                if (email.isBlank()) {
+                    loginTvEmail.error = "Email is Empty"
+//                    Toast.makeText(requireContext(), "Email is Empty  ", Toast.LENGTH_SHORT).show()
+                }
+                if (pass.isBlank()) {
+                    loginTvPassword.error = "Password is Empty"
+//                    Toast.makeText(requireContext(), "Password  is Empty  ", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Log.d("pass", email)
+                    Log.d("email", pass)
+                    signin(email, pass)
+                }
+//                email = loginTvEmail.text.toString().trim()
+//                pass = loginTvPassword.text.toString().trim()
+
             }
         }
         getUserData()

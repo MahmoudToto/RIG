@@ -8,5 +8,4 @@ data class User(
     var state: String=""
 ) {
 
-
 }

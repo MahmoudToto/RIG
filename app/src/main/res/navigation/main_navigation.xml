@@ -29,9 +29,7 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/adminSettingFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_adminSettingFragment_to_safetyFragment"
-            app:destination="@id/safetyFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -107,6 +105,11 @@
             app:destination="@id/mainSellerFragment"
             app:popUpTo="@id/splachScreen"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splachScreen_to_viewBagerFragment"
+            app:destination="@id/viewBagerFragment"
+            app:popUpTo="@id/splachScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/userHomeFragment"
@@ -128,9 +131,7 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/userSettingFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_userSettingFragment_to_safetyFragment"
-            app:destination="@id/safetyFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/mainUserFragment"
@@ -162,13 +163,22 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/sellerSettingFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_sellerSettingFragment_to_safetyFragment"
-            app:destination="@id/safetyFragment" />
+
     </fragment>
     <fragment
-        android:id="@+id/safetyFragment"
-        android:name="com.example.rig.ui.SafetyFragment"
-        android:label="fragment_safety"
-        tools:layout="@layout/fragment_safety" />
+        android:id="@+id/viewBagerFragment"
+        android:name="com.example.rig.ui.ViewBagerFragment"
+        android:label="ViewBagerFragment" >
+        <action
+            android:id="@+id/action_viewBagerFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/viewBagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.Admin.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+
 </navigation>

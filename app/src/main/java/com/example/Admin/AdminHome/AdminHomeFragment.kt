@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.rig.Model.PriceModel
+import com.example.rig.Model.PricntageModel
 import com.example.rig.Model.WeightModel
 import com.example.rig.databinding.FragmentAdminHomeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +27,7 @@ class AdminHomeFragment : Fragment() {
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
     lateinit var binding: FragmentAdminHomeBinding
     lateinit var userData: PriceModel
-    lateinit var plast:String
+    lateinit var plast: String
 
     //    private val progressBar: ProgressBar? = null
     override fun onCreateView(
@@ -34,13 +35,13 @@ class AdminHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAdminHomeBinding.inflate(inflater, container, false)
-        viewLifecycleOwner.lifecycleScope.launch {
-            launch { SaveDataBtn() }
-            launch { getpercentage() }
-            launch { getWeight() }
-        }
+
+        SaveDataBtn()
+        getpercentage()
+        getWeight()
+
         if (savedInstanceState != null) {
-           plast = savedInstanceState.getString("testt").toString()
+            plast = savedInstanceState.getString("testt").toString()
 //            binding.plasticPrice.setText(String.)
         }
         return binding.root
@@ -52,23 +53,23 @@ class AdminHomeFragment : Fragment() {
         outState.putString("testt", plast)
     }
 
-    suspend private fun SaveDataBtn() {
+    private fun SaveDataBtn() {
         binding.saveBtn.setOnClickListener {
+            val metal = binding.metalPrice.text.toString()
+            val organic = binding.organicPrice.text.toString()
+            val paper = binding.paperPrice.text.toString()
             val plastic = binding.plasticPrice.text.toString()
             val glass = binding.glassPrice.text.toString()
-            val metal = binding.metalPrice.text.toString()
-            val paper = binding.paperPrice.text.toString()
-            val organic = binding.organicPrice.text.toString()
             val oil = binding.oilPrice.text.toString()
 //            progressBar!!.visibility = View.VISIBLE
 //            saveFireStore(metal,organic,paper,plastic,glass,oil)
             userData = PriceModel(
 //                lost ,
+                metal,
+                organic,
+                paper,
                 plastic,
                 glass,
-                metal,
-                paper,
-                organic,
                 oil
             )
 
@@ -110,48 +111,50 @@ class AdminHomeFragment : Fragment() {
 
     //    TODO: ProgressBar Handling
     fun updateProgressBar() {
+        binding.progressBarTvMetal.text = metal
+        binding.progressBarMetal.setProgress(metal.toInt(), true)
+
+        binding.progressBarTvOrganic.text = organic
+        binding.progressBarOrganic.setProgress(organic.toInt(), true)
 
         binding.progressBarTvPlastic.text = plastic
         binding.progressBarPlastic.setProgress(plastic.toInt(), true)
 
-        binding.progressBarTvGlass.text = glass
-        binding.progressBarGlass.setProgress(glass.toInt(), true)
-
-        binding.progressBarTvMetal.text = metal
-        binding.progressBarMetal.setProgress(metal.toInt(), true)
-
         binding.progressBarTvPaper.text = paper
         binding.progressBarPaper.setProgress(paper.toInt(), true)
 
-        binding.progressBarTvOrganic.text = organic
-        binding.progressBarOrganic.setProgress(organic.toInt(), true)
+        binding.progressBarTvGlass.text = glass
+        binding.progressBarGlass.setProgress(glass.toInt(), true)
 
         binding.progressBarTvOil.text = oil
         binding.progressBarOil.setProgress(oil.toInt(), true)
     }
 
-    var lost = ""
-    var plastic = ""
-    var glass = ""
     var metal = ""
-    var paper = ""
     var organic = ""
+    var plastic = ""
+    var paper = ""
+    var glass = ""
     var oil = ""
 
+//    var lost = ""
+
     //    TODO: get data from real time
-    suspend private fun getpercentage() {
-        FirebaseDatabase.getInstance().getReference("PriceData")
+    private fun getpercentage() {
+        FirebaseDatabase.getInstance().getReference("levels")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val percentagemodel = snapshot.child("GyLIOUSo8OeQR9g5m48rWfLPcyE3")
-                        .getValue(PriceModel::class.java)
-                    lost = percentagemodel!!.lost.toString()
-                    plastic = percentagemodel!!.plastic.toString()
-                    glass = percentagemodel!!.glass.toString()
-                    metal = percentagemodel!!.metal.toString()
-                    paper = percentagemodel!!.paper.toString()
-                    organic = percentagemodel!!.organic.toString()
-                    oil = percentagemodel!!.oil.toString()
+                    val percentagemodel = snapshot.getValue(PricntageModel::class.java)
+                    metal = percentagemodel!!.metal!!.let { abs(it) }.toString()
+                    organic = percentagemodel!!.organic!!.let { abs(it) }.toString()
+                    plastic = percentagemodel!!.plastic!!.let { abs(it) }.toString()
+                    paper = percentagemodel!!.paper!!.let { abs(it) }.toString()
+                    glass = percentagemodel!!.glass!!.let { abs(it) }.toString()
+                    oil = percentagemodel!!.oil!!.let { abs(it) }.toString()
+//                    lost = percentagemodel!!.lost.toString()
+
+
+                    Log.d(ContentValues.TAG, "hsf" + snapshot.toString())
                     updateProgressBar()
                 }
 
@@ -163,18 +166,17 @@ class AdminHomeFragment : Fragment() {
 
     }
 
-    suspend private fun getWeight() {
+    private fun getWeight() {
         FirebaseDatabase.getInstance().getReference("weight")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val weightmodel = snapshot.getValue(WeightModel::class.java)
-
-                    binding.plasticWait.text = weightmodel!!.weight1!!.let { abs(it) }.toString()
-                    binding.glassWait.text = weightmodel!!.weight2!!.let { abs(it) }.toString()
-                    binding.metalWait.text = weightmodel!!.weight3!!.let { abs(it) }.toString()
-                    binding.paperWait.text = weightmodel!!.weight4!!.let { abs(it) }.toString()
-                    binding.organicWait.text = weightmodel!!.weight5!!.let { abs(it) }.toString()
-                    binding.oilWait.text = weightmodel!!.weight6!!.let { abs(it) }.toString()
+                    binding.metalWait.text = weightmodel!!.metal!!.let { abs(it) }.toString()
+                    binding.organicWait.text = weightmodel!!.organic!!.let { abs(it) }.toString()
+                    binding.paperWait.text = weightmodel!!.paper!!.let { abs(it) }.toString()
+                    binding.plasticWait.text = weightmodel!!.plastic!!.let { abs(it) }.toString()
+                    binding.glassWait.text = weightmodel!!.glass!!.let { abs(it) }.toString()
+                    binding.oilWait.text = weightmodel!!.oil!!.let { abs(it) }.toString()
 
                     Log.d(ContentValues.TAG, "hsf" + snapshot.toString())
                 }

@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/_100sdp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="RECYCLE IS GARBAGE"
+        android:text="Recycle Is Garbage"
         android:textColor="@color/white"
         android:textSize="@dimen/_24ssp" />
 

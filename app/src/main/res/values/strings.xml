@@ -15,4 +15,11 @@
     <string name="menu_log_out">Log out</string>
     <string name="menu_about">About</string>
     <string name="title_activity_nav_drawer">NavDrawer</string>
+
+    <string name="view_pager1">"This application helps the user to know the types of materials that can be recycled and also to benefit from the recycling process"</string>
+    <string name="view_pager2">"Smart trash bin that saves time and effort"</string>
+    <string name="view_pager3">"You can earn coins by recycling"</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
 </resources>

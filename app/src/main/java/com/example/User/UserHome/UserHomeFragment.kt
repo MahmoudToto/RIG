@@ -1,5 +1,6 @@
 package com.example.User.UserHome
 
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -36,106 +37,49 @@ class UserHomeFragment : Fragment() {
 
         binding = FragmentUserHomeBinding.inflate(inflater, container, false)
 
-        binding = FragmentUserHomeBinding.inflate(inflater, container, false)
-        viewLifecycleOwner.lifecycleScope.launch (){
-            launch { getDataPrice() }
-            launch { getpercentage()}
-            launch { getWeight() }
-        }
+
+             getDataPrice()
+//             getpercentage()
+             getWeight()
+
         return binding.root
     }
 
 
     //  TODO: get data frome fire store
-    suspend private fun getDataPrice() {
+    private fun getDataPrice() {
         Log.d("GGG","GDgdgds")
         FirebaseFirestore.getInstance().collection("PriceData")
-            .document("GyLIOUSo8OeQR9g5m48rWfLPcyE3").addSnapshotListener { value, error ->
-//                lost =value!!.getString("lost").toString()
-//                binding.lostPrice.text = value!!.getString("lost")
+            .document("6muGLS45UiN00wu6tJQT4VIUVKk1").addSnapshotListener { value, error ->
+                binding.metalPrice.text = value!!.getString("metal")
+                binding.organicPrice.text = value!!.getString("organic")
+                binding.paperPrice.text = value!!.getString("paper")
                 binding.plasticPrice.text = value!!.getString("plastic")
                 binding.glassPrice.text = value!!.getString("glass")
-                binding.metalPrice.text = value!!.getString("metal")
-                binding.paperPrice.text = value!!.getString("paper")
-                binding.organicPrice.text = value!!.getString("organic")
                 binding.oilPrice.text = value!!.getString("oil")
-
+//                lost =value!!.getString("lost").toString()
+//                binding.lostPrice.text = value!!.getString("lost")
             }
     }
 
-    //    TODO: ProgressBar Handling
-    fun updateProgressBar() {
-//        binding.progressBarTvLost.text = lost
-//        binding.progressBarLost.setProgress(lost.toInt(), true)
 
-        binding.progressBarTvPlastic.text = plastic
-        binding.progressBarPlastic.setProgress(plastic.toInt(), true)
 
-        binding.progressBarTvGlass.text = glass
-        binding.progressBarGlass.setProgress(glass.toInt(), true)
 
-        binding.progressBarTvMetal.text = metal
-        binding.progressBarMetal.setProgress(metal.toInt(), true)
-
-        binding.progressBarTvPaper.text = paper
-        binding.progressBarPaper.setProgress(paper.toInt(), true)
-
-        binding.progressBarTvOrganic.text = organic
-        binding.progressBarOrganic.setProgress(organic.toInt(), true)
-
-        binding.progressBarTvOil.text = oil
-        binding.progressBarOil.setProgress(oil.toInt(), true)
-    }
-
-    var lost = ""
-    var plastic = ""
-    var glass = ""
-    var metal = ""
-    var paper = ""
-    var organic = ""
-    var oil = ""
-
-//     TODO: get data from real time
-    suspend private fun getpercentage() {
-        Log.d("GGG","fsafsa")
-        FirebaseDatabase.getInstance().getReference("PriceData")
-            .addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val percentagemodel = snapshot.child("GyLIOUSo8OeQR9g5m48rWfLPcyE3")
-                        .getValue(PriceModel::class.java)
-                    lost = percentagemodel!!.lost.toString()
-                    plastic = percentagemodel!!.plastic.toString()
-                    glass = percentagemodel!!.glass.toString()
-                    metal = percentagemodel!!.metal.toString()
-                    paper = percentagemodel!!.paper.toString()
-                    organic = percentagemodel!!.organic.toString()
-                    oil = percentagemodel!!.oil.toString()
-                    updateProgressBar()
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-
-                }
-
-            })
-
-    }
 
     //TODO: get weight data
-   suspend private fun getWeight() {
+    private fun getWeight() {
         FirebaseDatabase.getInstance().getReference("weight")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val weightmodel = snapshot.getValue(WeightModel::class.java)
-                    Log.d("GGG","FSAfsa")
-                    binding.plasticWait.text = weightmodel!!.weight1!!.let { abs(it) }.toString()
-                    binding.glassWait.text = weightmodel!!.weight2!!.let { abs(it) }.toString()
-                    binding.metalWait.text = weightmodel!!.weight3!!.let { abs(it) }.toString()
-                    binding.paperWait.text = weightmodel!!.weight4!!.let { abs(it) }.toString()
-                    binding.organicWait.text = weightmodel!!.weight5!!.let { abs(it) }.toString()
-                    binding.oilWait.text = weightmodel!!.weight6!!.let { abs(it) }.toString()
+                    binding.metalWait.text = weightmodel!!.metal!!.let { abs(it) }.toString()
+                    binding.plasticWait.text = weightmodel!!.plastic!!.let { abs(it) }.toString()
+                    binding.organicWait.text = weightmodel!!.organic!!.let { abs(it) }.toString()
+                    binding.paperWait.text = weightmodel!!.paper!!.let { abs(it) }.toString()
+                    binding.glassWait.text = weightmodel!!.glass!!.let { abs(it) }.toString()
+                    binding.oilWait.text = weightmodel!!.oil!!.let { abs(it) }.toString()
 
-                    Log.d(TAG, "hsf" + snapshot.toString())
+                    Log.d(ContentValues.TAG, "hsf" + snapshot.toString())
                 }
 
                 override fun onCancelled(error: DatabaseError) {

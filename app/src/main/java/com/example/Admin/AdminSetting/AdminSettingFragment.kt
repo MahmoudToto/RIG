@@ -50,7 +50,7 @@ private lateinit var binding:FragmentAdminSettingBinding
     }
     fun back(){
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.mainUserFragment)
+            findNavController().navigate(R.id.mainAdminFragment)
         }
     }
 }

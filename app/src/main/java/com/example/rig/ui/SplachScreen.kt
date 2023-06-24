@@ -43,7 +43,7 @@ class SplachScreen : Fragment() {
             delay(1000)
             Log.d("userstatenull","yes")
             if (user == null) {
-                findNavController().navigate(R.id.action_splachScreen_to_signInFragment)
+                findNavController().navigate(R.id.action_splachScreen_to_viewBagerFragment)
             } else {
                 getUserData()
             }
